@@ -1,0 +1,291 @@
+/* ═══════════════════════════════════════════════════
+   Traç'Agri — Design System v3
+   Aesthetic: vivid agricultural ops dashboard
+   Rich sidebar · tinted content · rounded, shaped UI
+═══════════════════════════════════════════════════ */
+:root {
+  /* Palette — more saturated & vivid than v2 */
+  --soil:        #142216;   /* sidebar bg — deep forest, richer */
+  --soil-mid:    #1d2e1f;   /* sidebar hover */
+  --soil-light:  #294a2c;   /* sidebar active */
+  --leaf:        #2f9e46;   /* primary action — brighter green */
+  --leaf-light:  #3fc95c;   /* hover state */
+  --sprout:      #b9f2a0;   /* accent on dark */
+  --field:       #eaf1e2;   /* main bg — tinted sage, not white */
+  --straw:       #dce6cf;   /* subtle bg, borders — greener */
+  --bark:        #b7c4a6;   /* muted borders */
+  --ink:         #142216;   /* primary text */
+  --stone:       #52694c;   /* secondary text — green-tinted */
+  --fog:         #86a077;   /* placeholder, muted */
+  --white:       #fdfdf6;   /* off-white — never pure white */
+  --amber:       #d97e0a;
+  --amber-pale:  #fde8bd;
+  --sky:         #2f7de0;
+  --sky-pale:    #dceafd;
+  --red:         #dd3d2c;
+  --red-pale:    #fde3df;
+  --green-pale:  #d9f0d3;
+  /* Vivid accents — new in v3, for badges / highlights / shapes */
+  --coral:       #ff6b4a;
+  --coral-pale:  #ffe3da;
+  --teal:        #0ea5a3;
+  --teal-pale:   #cff5f2;
+  --gold:        #f0ab00;
+  --gold-pale:   #fdedbf;
+  /* Spacing */
+  --sidebar-w:   248px;
+  --topbar-h:    52px;
+  /* Shadows — tinted, not neutral black */
+  --shadow-xs:   0 1px 3px rgba(20,34,22,.08);
+  --shadow-sm:   0 3px 10px rgba(20,34,22,.10);
+  --shadow-md:   0 6px 24px rgba(20,34,22,.14);
+  --shadow-lg:   0 10px 44px rgba(20,34,22,.20);
+  /* Radius — bigger, more "shaped" */
+  --r-sm:  10px;
+  --r-md:  16px;
+  --r-lg:  24px;
+  --r-pill: 999px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  font-family: 'DM Sans', sans-serif; color: var(--ink); font-size: 14px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: var(--field);
+  position: relative;
+}
+/* Decorative background shapes — soft organic blobs instead of flat white */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(480px 480px at 92% -6%, rgba(47,158,70,.14), transparent 60%),
+    radial-gradient(420px 420px at -8% 18%, rgba(255,107,74,.10), transparent 60%),
+    radial-gradient(520px 520px at 100% 82%, rgba(14,165,163,.10), transparent 60%),
+    radial-gradient(380px 380px at 8% 98%, rgba(240,171,0,.10), transparent 60%);
+}
+#root { position: relative; z-index: 1; }
+button, input, select, textarea { font-family: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Buttons — pill-shaped, bolder ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+  padding: .55rem 1.15rem; border-radius: var(--r-pill); cursor: pointer; font-size: .82rem;
+  font-weight: 600; border: 1.5px solid var(--straw); background: var(--white);
+  color: var(--ink); transition: all .15s ease; white-space: nowrap; line-height: 1;
+}
+.btn:hover { border-color: var(--leaf); background: var(--green-pale); color: var(--leaf); transform: translateY(-1px); box-shadow: var(--shadow-xs); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: .45; cursor: not-allowed; pointer-events: none; }
+.btn-sm { padding: .44rem .95rem; font-size: .78rem; }
+.btn-primary { background: linear-gradient(135deg, var(--leaf), var(--leaf-light)); color: white; border-color: var(--leaf); }
+.btn-primary:hover { filter: brightness(1.06); border-color: var(--leaf-light); color: white; }
+.btn-danger { background: var(--red-pale); color: var(--red); border-color: #f7c3bc; }
+.btn-danger:hover { background: #f7c3bc; }
+
+/* ── Forms ── */
+/* min-width:0 partout : sans ça, un <select>/<input> avec un long texte force sa
+   colonne de grille/flex à s'élargir au-delà du modal, qui se retrouve à scroller
+   horizontalement au lieu de laisser le texte se tronquer. */
+.form-group { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+.form-group label {
+  font-size: .72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--stone);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: .6rem .9rem; border: 1.5px solid var(--straw); border-radius: var(--r-sm);
+  font-size: .86rem; color: var(--ink); background: var(--white); outline: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--leaf); box-shadow: 0 0 0 3px rgba(47,158,70,.16);
+}
+.form-group input::placeholder { color: var(--fog); }
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(20,34,22,.55);
+  backdrop-filter: blur(5px); z-index: 9000;
+  display: flex; align-items: center; justify-content: center; padding: 1.2rem;
+}
+.modal {
+  background: var(--white); border-radius: var(--r-lg); width: 100%;
+  box-shadow: var(--shadow-lg); overflow: hidden; max-height: 92vh;
+  display: flex; flex-direction: column;
+  border: 1px solid rgba(255,255,255,.4);
+}
+.modal-hdr {
+  background: linear-gradient(135deg, var(--soil), var(--soil-light)); color: white; padding: 1.05rem 1.4rem;
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.modal-hdr h3 { font-size: .95rem; font-weight: 700; letter-spacing: .01em; }
+.modal-close {
+  background: rgba(255,255,255,.08); border: none; color: rgba(255,255,255,.6); cursor: pointer;
+  font-size: 1rem; width: 26px; height: 26px; border-radius: 50%; transition: all .15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-close:hover { color: white; background: rgba(255,255,255,.18); }
+.modal-body { padding: 1.35rem; overflow-y: auto; overflow-x: hidden; flex: 1; }
+.modal-foot {
+  padding: .9rem 1.3rem; border-top: 1px solid var(--straw);
+  display: flex; gap: .6rem; justify-content: flex-end; flex-shrink: 0;
+  background: var(--field);
+}
+
+/* ── Toast ── */
+.toast {
+  position: fixed; bottom: calc(1.8rem + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--soil), var(--soil-light)); color: white; padding: .65rem 1.5rem;
+  border-radius: var(--r-pill); font-size: .83rem; font-weight: 600; z-index: 9999;
+  box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,.12);
+  animation: toastIn .2s ease;
+}
+@keyframes toastIn { from { opacity:0; transform:translateX(-50%) translateY(8px) } to { opacity:1; transform:translateX(-50%) translateY(0) } }
+
+/* ── Spinner ── */
+.spinner {
+  border: 2.5px solid rgba(255,255,255,.25); border-top-color: white;
+  border-radius: 50%; animation: spin .65s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Data tables ── */
+.data-table { width: 100%; font-size: .82rem; border-collapse: collapse; }
+.data-table thead th {
+  padding: .65rem .9rem; text-align: left; font-size: .7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--stone);
+  background: var(--straw); border-bottom: 2px solid var(--bark);
+  white-space: nowrap; position: sticky; top: 0;
+}
+.data-table tbody tr { transition: background .1s; cursor: pointer; }
+.data-table tbody tr:hover { background: var(--green-pale); }
+.data-table tbody td { padding: .68rem .9rem; border-bottom: 1px solid var(--straw); }
+
+/* ── Section page header ── */
+.page-hdr {
+  padding: 1.05rem 1.5rem; background: var(--white); border-bottom: 1px solid var(--straw);
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+}
+.page-hdr h2 { font-size: 1.05rem; font-weight: 800; }
+.page-hdr p { font-size: .78rem; color: var(--stone); margin-top: .1rem; }
+
+/* ── Chip / badge — punchier ── */
+.chip {
+  display: inline-flex; align-items: center; gap: .3rem;
+  padding: .2rem .65rem; border-radius: var(--r-pill); font-size: .7rem; font-weight: 700;
+}
+.chip-green { background: var(--green-pale); color: var(--leaf); }
+.chip-amber { background: var(--amber-pale); color: var(--amber); }
+.chip-red   { background: var(--red-pale);   color: var(--red);   }
+.chip-blue  { background: var(--sky-pale);   color: var(--sky);   }
+.chip-coral { background: var(--coral-pale); color: var(--coral); }
+.chip-teal  { background: var(--teal-pale);  color: var(--teal);  }
+.chip-gold  { background: var(--gold-pale);  color: var(--gold);  }
+
+/* ── Card — rounder, subtle colored edge ── */
+.card {
+  background: var(--white); border: 1px solid var(--straw);
+  border-radius: var(--r-md); padding: 1.15rem 1.3rem;
+  box-shadow: var(--shadow-xs);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--leaf); opacity: .5; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--leaf-light); }
+
+/* ── Compat aliases (old components reference these) ── */
+:root {
+  --green-deep:    var(--soil);
+  --green-mid:     var(--leaf);
+  --green-accent:  var(--leaf-light);
+  --green-light:   var(--sprout);
+  --cream:         var(--field);
+  --cream-dark:    var(--straw);
+  --border:        var(--straw);
+  --text-main:     var(--ink);
+  --text-muted:    var(--stone);
+  --blue:          var(--sky);
+  --blue-pale:     var(--sky-pale);
+  --sidebar-w:     248px;
+}
+
+/* ── Responsive: tables & wide grids ── */
+.tbl-wrap {
+  background: var(--white); border: 1px solid var(--straw); border-radius: var(--r-md);
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.tbl-wrap table { width: 100%; border-collapse: collapse; }
+
+/* Barres d'onglets qui défilent horizontalement (mobile) : un léger fondu sur le
+   bord droit signale qu'il y a plus de contenu à faire défiler — sans ça, le
+   dernier onglet visible est tronqué net et rien n'indique qu'on peut glisser. */
+.tab-scroll-fade { position: relative; }
+.tab-scroll-fade::after {
+  content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 28px;
+  background: linear-gradient(to right, transparent, var(--white, #fff));
+  pointer-events: none;
+}
+
+/* Impression "sur place" (window.print() sans passer par window.open) :
+   nécessaire sur mobile/app native — une popup window.open() casse le bouton
+   retour matériel (sort carrément de l'appli) et n'ouvre pas toujours le
+   dialogue d'impression natif (Enregistrer en PDF / Partager par mail,
+   WhatsApp…). En imprimant la page elle-même, seul le contenu marqué
+   .print-area reste visible sur le document imprimé/exporté en PDF. */
+.print-area { display: none; }
+@media print {
+  /* "visibility" (pas "display") : reste correct quelle que soit la profondeur
+     d'imbrication de .print-area dans l'arbre React, sans avoir besoin d'un portail. */
+  body.printing-active * { visibility: hidden; }
+  body.printing-active .print-area { display: block !important; visibility: visible; position: absolute; top: 0; left: 0; width: 100%; }
+  body.printing-active .print-area * { visibility: visible; }
+}
+
+/* ── Responsive: breakpoints ── */
+@media (max-width: 768px) {
+  body { font-size: 13px; }
+
+  /* Modals: near full-screen, safe scrolling on short viewports */
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal { max-width: 100% !important; width: 100%; border-radius: var(--r-md) var(--r-md) 0 0; max-height: 94vh; }
+  .modal-body { padding: 1rem; }
+  .modal-foot { padding-bottom: calc(.9rem + env(safe-area-inset-bottom)); }
+
+  .page-hdr { padding: .85rem 1rem; flex-wrap: wrap; gap: .5rem; }
+  .card { padding: .9rem 1rem; }
+
+  /* Grilles de formulaire 2 colonnes (modals) : une seule colonne sur téléphone,
+     sinon les select/inputs avec libellés longs deviennent illisibles. */
+  .form-grid-2 { grid-template-columns: 1fr !important; }
+}
+
+/* ── Modern btn-sm alias (components use both .btn-sm and .btn + .btn-sm) ── */
+.btn-sm {
+  display: inline-flex; align-items: center; justify-content: center; gap: .35rem;
+  padding: .46rem .95rem; border-radius: var(--r-pill); cursor: pointer;
+  font-size: .78rem; font-weight: 600; border: 1.5px solid var(--straw);
+  background: var(--white); color: var(--ink); transition: all .14s;
+  white-space: nowrap; line-height: 1;
+}
+.btn-sm:hover    { border-color: var(--leaf); background: var(--green-pale); color: var(--leaf); transform: translateY(-1px); }
+.btn-sm.primary  { background: linear-gradient(135deg, var(--leaf), var(--leaf-light)); color: white; border-color: var(--leaf); }
+.btn-sm.primary:hover { filter: brightness(1.06); border-color: var(--leaf-light); color: white; }
+.btn-sm:disabled { opacity: .45; cursor: not-allowed; }
+
+/* Étiquette permanente du nom de parcelle sur la carte (mode Intervention) */
+.parcelle-label {
+  background: rgba(255,255,255,.92); border: 1px solid rgba(0,0,0,.15);
+  border-radius: 5px; padding: 1px 5px; font-size: 10px; font-weight: 700;
+  color: #1a2e1c; box-shadow: none; white-space: nowrap;
+}
+.parcelle-label::before { display: none; }

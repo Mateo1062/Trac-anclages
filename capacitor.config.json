@@ -1,0 +1,9 @@
+{
+  "appId": "com.tracagri.app.anclage",
+  "appName": "Traç'Anclage",
+  "webDir": "dist",
+  "server": {
+    "url": "https://tracagri-anclage.vercel.app",
+    "cleartext": false
+  }
+}
