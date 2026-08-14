@@ -140,19 +140,19 @@ function Logo({ size=22 }) {
     <svg viewBox="0 0 100 100" style={{ width:size, height:size, flexShrink:0 }}>
       <defs>
         <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#3fc95c"/>
-          <stop offset="1" stopColor="#1d5c2a"/>
+          <stop offset="0" stopColor="#20384F"/>
+          <stop offset="1" stopColor="#17293D"/>
         </linearGradient>
       </defs>
       <rect width="100" height="100" rx="24" fill="url(#logoGrad)"/>
-      <circle cx="50" cy="76" r="5.5" fill="#eaf9df"/>
-      <path d="M50,73 C50,60 50,50 50,40" stroke="#eaf9df" strokeWidth="4" strokeLinecap="round" fill="none"/>
-      <g transform="translate(50,55) rotate(-38)">
-        <path d="M0,0 C-13,-4 -18,-14 -14,-26 C-2,-24 4,-14 0,0 Z" fill="#eaf9df"/>
-      </g>
-      <g transform="translate(50,42) rotate(28)">
-        <path d="M0,0 C15,-3 21,-16 16,-30 C3,-27 -4,-15 0,0 Z" fill="#c8f0a9"/>
-      </g>
+      <line x1="50" y1="30" x2="50" y2="76" stroke="#E0A84C" strokeWidth="4" strokeLinecap="round"/>
+      <path d="M50,30 L58,20 L50,24 L42,20 Z" fill="#F1C77A"/>
+      <path d="M50,40 L64,32 L60,42 L50,46 Z" fill="#E0A84C"/>
+      <path d="M50,40 L36,32 L40,42 L50,46 Z" fill="#E0A84C"/>
+      <path d="M50,54 L63,47 L59,56 L50,60 Z" fill="#E0A84C"/>
+      <path d="M50,54 L37,47 L41,56 L50,60 Z" fill="#E0A84C"/>
+      <path d="M50,68 L61,62 L58,70 L50,74 Z" fill="#E0A84C"/>
+      <path d="M50,68 L39,62 L42,70 L50,74 Z" fill="#E0A84C"/>
     </svg>
   )
 }
@@ -185,7 +185,7 @@ function FrigoWhoAreYou({ onConfirm }) {
     <div style={{ minHeight:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'1.6rem', background:'var(--field)', padding:'2rem' }}>
       <div style={{ display:'flex', alignItems:'center', gap:'.7rem' }}>
         <Logo size={40} />
-        <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.7rem', color:'var(--ink)' }}>Traç'Agri</span>
+        <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.7rem', color:'var(--ink)' }}>Traç'Anclage</span>
       </div>
       <div style={{ background:'white', borderRadius:16, padding:'1.8rem', maxWidth:380, width:'100%', boxShadow:'var(--shadow-md)', border:'1px solid var(--border)' }}>
         <div style={{ fontWeight:700, fontSize:'1.05rem', marginBottom:'.3rem', textAlign:'center' }}>👋 Qui es-tu ?</div>
@@ -299,7 +299,7 @@ export default function App() {
         return
       }
 
-      if (window.confirm("Quitter Traç'Agri ?")) {
+      if (window.confirm("Quitter Traç'Anclage ?")) {
         CapApp.exitApp()
       }
     }).then(h => { handle = h })

@@ -77,7 +77,7 @@ export default function InstallPrompt() {
       </div>
 
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontWeight: 700, fontSize: '.86rem', marginBottom: 2 }}>Installer Traç'Agri</div>
+        <div style={{ fontWeight: 700, fontSize: '.86rem', marginBottom: 2 }}>Installer Traç'Anclage</div>
 
         {showIosHint ? (
           <div style={{ fontSize: '.76rem', color: 'rgba(255,255,255,.75)', lineHeight: 1.5 }}>

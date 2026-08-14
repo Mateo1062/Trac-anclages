@@ -1,23 +1,23 @@
 /* ═══════════════════════════════════════════════════
-   Traç'Agri — Design System v3
+   Traç'Anclage — Design System v3
    Aesthetic: vivid agricultural ops dashboard
    Rich sidebar · tinted content · rounded, shaped UI
 ═══════════════════════════════════════════════════ */
 :root {
-  /* Palette — more saturated & vivid than v2 */
-  --soil:        #142216;   /* sidebar bg — deep forest, richer */
-  --soil-mid:    #1d2e1f;   /* sidebar hover */
-  --soil-light:  #294a2c;   /* sidebar active */
-  --leaf:        #2f9e46;   /* primary action — brighter green */
-  --leaf-light:  #3fc95c;   /* hover state */
-  --sprout:      #b9f2a0;   /* accent on dark */
-  --field:       #eaf1e2;   /* main bg — tinted sage, not white */
-  --straw:       #dce6cf;   /* subtle bg, borders — greener */
-  --bark:        #b7c4a6;   /* muted borders */
-  --ink:         #142216;   /* primary text */
-  --stone:       #52694c;   /* secondary text — green-tinted */
-  --fog:         #86a077;   /* placeholder, muted */
-  --white:       #fdfdf6;   /* off-white — never pure white */
+  /* Palette — Traç'Anclage : ardoise profonde + doré blé */
+  --soil:        #16232F;   /* sidebar bg — ardoise profonde */
+  --soil-mid:    #1E2F3D;   /* sidebar hover */
+  --soil-light:  #2C4657;   /* sidebar active */
+  --leaf:        #2F6690;   /* primary action — bleu acier */
+  --leaf-light:  #3E82B3;   /* hover state */
+  --sprout:      #E8C989;   /* accent on dark — doré clair */
+  --field:       #EEF1F4;   /* main bg — gris-bleu tinté, pas blanc pur */
+  --straw:       #E1E6EA;   /* subtle bg, borders */
+  --bark:        #C3CBD1;   /* muted borders */
+  --ink:         #16232F;   /* primary text */
+  --stone:       #5B6B78;   /* secondary text — bleu-gris */
+  --fog:         #93A0AA;   /* placeholder, muted */
+  --white:       #FDFDFB;   /* off-white — never pure white */
   --amber:       #d97e0a;
   --amber-pale:  #fde8bd;
   --sky:         #2f7de0;
@@ -36,10 +36,10 @@
   --sidebar-w:   248px;
   --topbar-h:    52px;
   /* Shadows — tinted, not neutral black */
-  --shadow-xs:   0 1px 3px rgba(20,34,22,.08);
-  --shadow-sm:   0 3px 10px rgba(20,34,22,.10);
-  --shadow-md:   0 6px 24px rgba(20,34,22,.14);
-  --shadow-lg:   0 10px 44px rgba(20,34,22,.20);
+  --shadow-xs:   0 1px 3px rgba(22,35,47,.08);
+  --shadow-sm:   0 3px 10px rgba(22,35,47,.10);
+  --shadow-md:   0 6px 24px rgba(22,35,47,.14);
+  --shadow-lg:   0 10px 44px rgba(22,35,47,.20);
   /* Radius — bigger, more "shaped" */
   --r-sm:  10px;
   --r-md:  16px;

@@ -1169,7 +1169,7 @@ function RdvModal({ rdv, setRdv, clients, lieux = [], contrats = [], onSave, onD
       picked.push({
         cell_id: c.cell_id, frigo: frigoName[c.frigo_id] || '?',
         label: c.cell_id.split('_').slice(1).join(' '),
-        palox: nb, poids_palox: poids, tonnage: t, variety: c.variety, lot: c.lot || '', color: c.color || '#3fc95c',
+        palox: nb, poids_palox: poids, tonnage: t, variety: c.variety, lot: c.lot || '', color: c.color || '#E0A84C',
       })
       total += t
       totalPalox += nb

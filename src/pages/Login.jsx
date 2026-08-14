@@ -37,7 +37,7 @@ export default function Login() {
       }}>
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'radial-gradient(ellipse 80% 60% at 20% 80%, rgba(74,144,80,0.25) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 20%, rgba(45,90,48,0.4) 0%, transparent 55%)',
+          background: 'radial-gradient(ellipse 80% 60% at 20% 80%, rgba(46,102,144,0.25) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 20%, rgba(32,56,79,0.4) 0%, transparent 55%)',
           pointerEvents: 'none'
         }} />
         <div style={{ position: 'relative', zIndex: 1 }}>
@@ -46,22 +46,22 @@ export default function Login() {
               <svg viewBox="0 0 100 100" style={{ width: 44, height: 44, display: 'block' }}>
                 <defs>
                   <linearGradient id="loginLogoGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stopColor="#3fc95c"/>
-                    <stop offset="1" stopColor="#1d5c2a"/>
+                    <stop offset="0" stopColor="#20384F"/>
+                    <stop offset="1" stopColor="#17293D"/>
                   </linearGradient>
                 </defs>
                 <rect width="100" height="100" fill="url(#loginLogoGrad)"/>
-                <circle cx="50" cy="76" r="5.5" fill="#eaf9df"/>
-                <path d="M50,73 C50,60 50,50 50,40" stroke="#eaf9df" strokeWidth="4" strokeLinecap="round" fill="none"/>
-                <g transform="translate(50,55) rotate(-38)">
-                  <path d="M0,0 C-13,-4 -18,-14 -14,-26 C-2,-24 4,-14 0,0 Z" fill="#eaf9df"/>
-                </g>
-                <g transform="translate(50,42) rotate(28)">
-                  <path d="M0,0 C15,-3 21,-16 16,-30 C3,-27 -4,-15 0,0 Z" fill="#c8f0a9"/>
-                </g>
+                <line x1="50" y1="30" x2="50" y2="76" stroke="#E0A84C" strokeWidth="4" strokeLinecap="round"/>
+                <path d="M50,30 L58,20 L50,24 L42,20 Z" fill="#F1C77A"/>
+                <path d="M50,40 L64,32 L60,42 L50,46 Z" fill="#E0A84C"/>
+                <path d="M50,40 L36,32 L40,42 L50,46 Z" fill="#E0A84C"/>
+                <path d="M50,54 L63,47 L59,56 L50,60 Z" fill="#E0A84C"/>
+                <path d="M50,54 L37,47 L41,56 L50,60 Z" fill="#E0A84C"/>
+                <path d="M50,68 L61,62 L58,70 L50,74 Z" fill="#E0A84C"/>
+                <path d="M50,68 L39,62 L42,70 L50,74 Z" fill="#E0A84C"/>
               </svg>
             </div>
-            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.9rem', color: 'white' }}>Traç'Agri</span>
+            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.9rem', color: 'white' }}>Traç'Anclage</span>
           </div>
         </div>
         <div style={{ position: 'relative', zIndex: 1 }}>
@@ -79,7 +79,7 @@ export default function Login() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', paddingTop: 'calc(2rem + env(safe-area-inset-top))', paddingBottom: 'calc(2rem + env(safe-area-inset-bottom))' }}>
         <form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: 380 }}>
           <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.9rem', marginBottom: '.2rem' }}>Connexion</h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '.88rem', marginBottom: '2rem' }}>Accédez à votre espace Traç'Agri</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '.88rem', marginBottom: '2rem' }}>Accédez à votre espace Traç'Anclage</p>
 
           {error && (
             <div style={{ background: '#fdf0ef', border: '1px solid #f5c6c2', borderRadius: 8, padding: '.65rem .9rem', fontSize: '.83rem', color: 'var(--red)', marginBottom: '1rem' }}>
