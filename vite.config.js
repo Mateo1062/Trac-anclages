@@ -10,8 +10,8 @@ export default defineConfig({
       injectRegister: false,
       includeAssets: ['favicon.png', 'apple-touch-icon.png', 'icon.svg'],
       manifest: {
-        name: "Traç'Anclage",
-        short_name: "Traç'Anclage",
+        name: "Traç'Anclages",
+        short_name: "Traç'Anclages",
         description: 'Gestion agricole complète — planning, stockage, traçabilité',
         start_url: '/',
         display: 'standalone',

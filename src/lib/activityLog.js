@@ -3,8 +3,8 @@
 // et sur la synchronisation hors-ligne (offlineSync.js) : chaque écriture
 // réussie (en ligne ou rejouée après une coupure) est journalisée sans
 // qu'aucune page n'ait besoin d'appeler quoi que ce soit explicitement.
-const SUPABASE_URL = 'https://gzyteuuttgiuyefholhj.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6eXRldXV0dGdpdXllZmhvbGhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE2NTQxMzEsImV4cCI6MjA5NzIzMDEzMX0.qXVQCTuvGSYpkriuJ8mlM8wjytNSjp3mpNGNQJub8tU'
+const SUPABASE_URL = 'https://ofmikroavbdhquckfkkx.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mbWlrcm9hdmJkaHF1Y2tma2t4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY2ODQwOTEsImV4cCI6MjEwMjI2MDA5MX0.8-WaHAberQZasXOOBxjpi67H-SFQYxaS35a_Lzhppu4'
 
 const WRITE_METHODS = ['POST', 'PATCH', 'PUT', 'DELETE']
 

@@ -61,7 +61,7 @@ export default function Login() {
                 <path d="M50,68 L39,62 L42,70 L50,74 Z" fill="#E0A84C"/>
               </svg>
             </div>
-            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.9rem', color: 'white' }}>Traç'Anclage</span>
+            <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.9rem', color: 'white' }}>Traç'Anclages</span>
           </div>
         </div>
         <div style={{ position: 'relative', zIndex: 1 }}>
@@ -79,7 +79,7 @@ export default function Login() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', paddingTop: 'calc(2rem + env(safe-area-inset-top))', paddingBottom: 'calc(2rem + env(safe-area-inset-bottom))' }}>
         <form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: 380 }}>
           <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.9rem', marginBottom: '.2rem' }}>Connexion</h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '.88rem', marginBottom: '2rem' }}>Accédez à votre espace Traç'Anclage</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '.88rem', marginBottom: '2rem' }}>Accédez à votre espace Traç'Anclages</p>
 
           {error && (
             <div style={{ background: '#fdf0ef', border: '1px solid #f5c6c2', borderRadius: 8, padding: '.65rem .9rem', fontSize: '.83rem', color: 'var(--red)', marginBottom: '1rem' }}>

@@ -1,10 +1,10 @@
 /* ═══════════════════════════════════════════════════
-   Traç'Anclage — Design System v3
+   Traç'Anclages — Design System v3
    Aesthetic: vivid agricultural ops dashboard
    Rich sidebar · tinted content · rounded, shaped UI
 ═══════════════════════════════════════════════════ */
 :root {
-  /* Palette — Traç'Anclage : ardoise profonde + doré blé */
+  /* Palette — Traç'Anclages : ardoise profonde + doré blé */
   --soil:        #16232F;   /* sidebar bg — ardoise profonde */
   --soil-mid:    #1E2F3D;   /* sidebar hover */
   --soil-light:  #2C4657;   /* sidebar active */

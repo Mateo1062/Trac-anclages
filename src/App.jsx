@@ -185,7 +185,7 @@ function FrigoWhoAreYou({ onConfirm }) {
     <div style={{ minHeight:'100vh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'1.6rem', background:'var(--field)', padding:'2rem' }}>
       <div style={{ display:'flex', alignItems:'center', gap:'.7rem' }}>
         <Logo size={40} />
-        <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.7rem', color:'var(--ink)' }}>Traç'Anclage</span>
+        <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.7rem', color:'var(--ink)' }}>Traç'Anclages</span>
       </div>
       <div style={{ background:'white', borderRadius:16, padding:'1.8rem', maxWidth:380, width:'100%', boxShadow:'var(--shadow-md)', border:'1px solid var(--border)' }}>
         <div style={{ fontWeight:700, fontSize:'1.05rem', marginBottom:'.3rem', textAlign:'center' }}>👋 Qui es-tu ?</div>
@@ -299,7 +299,7 @@ export default function App() {
         return
       }
 
-      if (window.confirm("Quitter Traç'Anclage ?")) {
+      if (window.confirm("Quitter Traç'Anclages ?")) {
         CapApp.exitApp()
       }
     }).then(h => { handle = h })
