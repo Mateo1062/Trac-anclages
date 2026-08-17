@@ -5,3 +5,6 @@ dist/
 android/app/build/
 android/.gradle/
 *.log
+
+.vercel
+.env*

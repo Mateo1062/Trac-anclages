@@ -19,6 +19,7 @@ import Meteo from './pages/Meteo'
 import InstallPrompt from './components/InstallPrompt'
 import OfflineBanner from './components/OfflineBanner'
 import UpdateBanner from './components/UpdateBanner'
+import ChatAssistant from './components/ChatAssistant'
 import JournalActivite from './pages/JournalActivite'
 import { useCampagne } from './lib/CampagneContext'
 import CampagneSelector from './components/CampagneSelector'
@@ -336,6 +337,7 @@ export default function App() {
         <InstallPrompt />
         <OfflineBanner />
         <UpdateBanner />
+        <ChatAssistant />
       </>
     )
   }
@@ -366,6 +368,7 @@ export default function App() {
       <InstallPrompt />
       <OfflineBanner />
       <UpdateBanner />
+      <ChatAssistant />
       {reorderOpen && (
         <NavReorderModal workspaceKey="agricole" groups={filteredGroups} onClose={() => setReorderOpen(false)} onSaved={() => setReorderOpen(false)} />
       )}
