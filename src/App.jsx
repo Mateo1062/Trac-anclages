@@ -6,9 +6,7 @@ import Planning from './pages/Planning'
 import Frigos from './pages/Frigos'
 import Database from './pages/Database'
 import OutilsAgricoles from './pages/OutilsAgricoles'
-import BatimentsAgricoles from './pages/BatimentsAgricoles'
 import EntretienGlobal from './pages/EntretienGlobal'
-import HeuresSalaries from './pages/HeuresSalaries'
 import ParcelleCarte from './pages/ParcelleCarte'
 import Cereales from './pages/Cereales'
 import GlobalGap from './pages/GlobalGap'
@@ -46,14 +44,12 @@ const NAV_AGRICOLE = [
   ]},
   { group: 'Suivi', items: [
     { id: 'outils',         label: 'Outils agricoles',   icon: IconOutil },
-    { id: 'batiments',      label: 'Bâtiment',           icon: IconBatiment },
     { id: 'entretien-global', label: 'Entretien global', icon: IconEntretien },
     { id: 'commande-phyto', label: 'Commande Phyto',     icon: IconPhyto },
     { id: 'engrais',        label: 'Calcul Engrais',     icon: IconEngrais },
     { id: 'cout-revient',   label: 'Coût de revient',    icon: IconCout, costOnly: true },
     { id: 'global-gap',     label: 'Global GAP',         icon: IconGap },
     { id: 'database-agricole', label: 'Base de données', icon: IconDb },
-    { id: 'heures-salaries', label: 'Heures salariés',   icon: IconHeures },
     { id: 'frigos',         label: 'Stockage Frigos',    icon: IconFrigo },
     { id: 'journal-activite', label: "Journal d'activité", icon: IconJournal, adminOnly: true },
     { id: 'diagnostic',     label: 'Diagnostic données', icon: IconDiagnostic, adminOnly: true },
@@ -107,7 +103,6 @@ function IconStock()     { return <SI><path d="M3 3v18h18"/><path d="M18.7 8 12 
 function IconMap()       { return <SI><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></SI> }
 function IconCarte()     { return <SI><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></SI> }
 function IconOutil()     { return <SI><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></SI> }
-function IconBatiment()  { return <SI><path d="M3 21h18"/><path d="M5 21V6l7-4 7 4v15"/><path d="M9 21v-6h6v6"/><path d="M9 10h1"/><path d="M14 10h1"/><path d="M9 14h1"/><path d="M14 14h1"/></SI> }
 function IconPhyto()     { return <SI><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></SI> }
 function IconCout()      { return <SI><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></SI> }
 function IconEngrais()   { return <SI><path d="M12 2C8 7 5 10.5 5 14a7 7 0 0 0 14 0c0-3.5-3-7-7-12z"/><path d="M12 18a4 4 0 0 1-4-4"/></SI> }
@@ -117,7 +112,6 @@ function IconGap()       { return <SI><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 
 function IconCereale()   { return <SI><path d="M12 22V8"/><path d="M12 12c-4 0-6-2-6-6 4 0 6 2 6 6z"/><path d="M12 12c4 0 6-2 6-6-4 0-6 2-6 6z"/><path d="M12 18c-4 0-6-2-6-6 4 0 6 2 6 6z"/><path d="M12 18c4 0 6-2 6-6-4 0-6 2-6 6z"/></SI> }
 function IconMeteo()     { return <SI><path d="M17.5 19H9a5 5 0 1 1 1.6-9.75A6 6 0 0 1 22 11.5 4.5 4.5 0 0 1 17.5 19z"/></SI> }
 function IconEntretien() { return <SI><path d="M5 17h14"/><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M5 17l1.5-6h11L19 17"/><path d="M7 11l1.5-4h7L17 11"/></SI> }
-function IconHeures() { return <SI><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></SI> }
 function IconJournal()   { return <SI><path d="M4 4h13a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><path d="M8 8h9"/><path d="M8 12h9"/><path d="M8 16h5"/></SI> }
 function IconFacture()   { return <SI><path d="M6 2h9l3 3v17H6z"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></SI> }
 function IconDiagnostic() { return <SI><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></SI> }
@@ -699,9 +693,7 @@ function PageRouter({ section, pageProps = {} }) {
       {section==='corbeille'         && isAdmin && <Corbeille />}
       {section==='database-agricole' && <Database scope="agricole" />}
       {section==='outils'         && <OutilsAgricoles />}
-      {section==='batiments'      && <BatimentsAgricoles />}
       {section==='entretien-global' && <EntretienGlobal />}
-      {section==='heures-salaries' && <HeuresSalaries />}
       {section==='parcelle-carte' && <ParcelleCarte />}
       {section==='global-gap'     && <GlobalGap />}
       {section==='commande-phyto' && <CommandePhyto />}
