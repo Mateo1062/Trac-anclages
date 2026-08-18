@@ -670,11 +670,11 @@ function NavItem({ item, active, collapsed, onClick }) {
       background: active ? 'linear-gradient(135deg, var(--leaf), var(--leaf-light))' : 'transparent',
       color: active ? 'white' : 'rgba(255,255,255,.55)',
       fontSize:'.82rem', fontWeight: active ? 700 : 500,
-      transition:'all .13s',
+      transition:'background .13s, color .13s, transform .13s',
       boxShadow: active ? '0 3px 10px rgba(47,158,70,.35)' : 'none',
     }}
-    onMouseEnter={e => { if(!active){ e.currentTarget.style.background='rgba(255,255,255,.08)'; e.currentTarget.style.color='rgba(255,255,255,.9)' }}}
-    onMouseLeave={e => { if(!active){ e.currentTarget.style.background='transparent'; e.currentTarget.style.color='rgba(255,255,255,.55)' }}}>
+    onMouseEnter={e => { if(!active){ e.currentTarget.style.background='rgba(255,255,255,.08)'; e.currentTarget.style.color='rgba(255,255,255,.9)'; e.currentTarget.style.transform = collapsed ? 'none' : 'translateX(2px)' }}}
+    onMouseLeave={e => { if(!active){ e.currentTarget.style.background='transparent'; e.currentTarget.style.color='rgba(255,255,255,.55)'; e.currentTarget.style.transform='none' }}}>
       <item.icon />
       {!collapsed && <span style={{ whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{item.label}</span>}
     </button>
@@ -685,7 +685,7 @@ function NavItem({ item, active, collapsed, onClick }) {
 function PageRouter({ section, pageProps = {} }) {
   const { isAdmin } = useAuth()
   return (
-    <>
+    <div key={section} className="page-fade-in" style={{ display:'flex', flexDirection:'column', flex:1, minHeight:0, minWidth:0 }}>
       {section==='planning'       && <Planning />}
       {section==='frigos'         && <Frigos {...pageProps} />}
       {section==='journal-activite'  && isAdmin && <JournalActivite />}
@@ -704,6 +704,6 @@ function PageRouter({ section, pageProps = {} }) {
       {section==='cereales'       && <Cereales />}
       {section==='stock-interventions' && <StockInterventions />}
       {section==='meteo-agricole' && <Meteo />}
-    </>
+    </div>
   )
 }
