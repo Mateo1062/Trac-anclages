@@ -89,7 +89,7 @@ export default function Login() {
 
           <div className="form-group" style={{ marginBottom: '1.2rem' }}>
             <label>Email</label>
-            <input type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="ex. jean@tracagri.fr" autoComplete="email" />
+            <input type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="ex. jean@tracanclages.fr" autoComplete="email" />
           </div>
 
           <div className="form-group" style={{ marginBottom: '1.5rem', position: 'relative' }}>

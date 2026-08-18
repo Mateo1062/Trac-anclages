@@ -391,7 +391,7 @@ function DesktopLayout({ workspace, section, navigate, logout, changeWorkspace, 
         {/* Logo */}
         <div style={{ height:'calc(56px + env(safe-area-inset-top))', display:'flex', alignItems:'center', padding:'env(safe-area-inset-top) 14px 0', gap:10, borderBottom:'1px solid rgba(255,255,255,.07)', flexShrink:0, boxSizing:'border-box' }}>
           <Logo />
-          {!collapsed && <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.18rem', color:'white', whiteSpace:'nowrap' }}>Traç<span style={{ color:'var(--sprout)' }}>'</span>Agri</span>}
+          {!collapsed && <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.18rem', color:'white', whiteSpace:'nowrap' }}>Traç<span style={{ color:'var(--sprout)' }}>'</span>Anclages</span>}
           <button onClick={() => setCollapsed(c=>!c)} title={collapsed?'Déplier':'Réduire'}
             style={{ marginLeft:'auto', background:'none', border:'none', cursor:'pointer', color:'rgba(255,255,255,.35)', borderRadius:6, padding:4, display:'flex', transition:'color .15s' }}
             onMouseEnter={e=>e.currentTarget.style.color='rgba(255,255,255,.85)'}
@@ -522,7 +522,7 @@ function MobileLayout({ workspace, section, navigate, logout, changeWorkspace, d
             <IconMenu />
           </button>
           <Logo size={28} />
-          <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.1rem', color:'white' }}>Traç<span style={{ color:'var(--sprout)' }}>'</span>Agri</span>
+          <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.1rem', color:'white' }}>Traç<span style={{ color:'var(--sprout)' }}>'</span>Anclages</span>
           <div style={{ marginLeft:'auto', width:28, height:28, background:'var(--leaf)', borderRadius:'50%', display:'grid', placeItems:'center', fontSize:'.7rem', fontWeight:700, color:'white' }}>
             {initials}
           </div>
@@ -540,7 +540,7 @@ function MobileLayout({ workspace, section, navigate, logout, changeWorkspace, d
             <div style={{ paddingTop:'env(safe-area-inset-top)', borderBottom:'1px solid rgba(255,255,255,.07)', flexShrink:0 }}>
               <div style={{ height:56, display:'flex', alignItems:'center', padding:'0 14px', gap:10 }}>
                 <Logo />
-                <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.1rem', color:'white' }}>Traç<span style={{ color:'var(--sprout)' }}>'</span>Agri</span>
+                <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.1rem', color:'white' }}>Traç<span style={{ color:'var(--sprout)' }}>'</span>Anclages</span>
                 <button onClick={() => setMobileOpen(false)}
                   style={{ marginLeft:'auto', background:'none', border:'none', cursor:'pointer', color:'rgba(255,255,255,.5)', borderRadius:6, padding:4, display:'flex' }}>
                   <IconClose />
